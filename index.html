@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>나의 공부 기록</title>
+  <style>
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      background: #f3f5f4;
+      color: #182a24;
+      font: 1rem/1.65 system-ui, "Malgun Gothic", sans-serif;
+    }
+
+    .wrap {
+      width: min(1120px, calc(100% - 40px));
+      margin-inline: auto;
+    }
+
+    header {
+      min-height: 72px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding-block: 12px;
+    }
+
+    nav { display: flex; gap: 20px; }
+    a { color: inherit; text-underline-offset: .25em; }
+    :focus-visible { outline: 3px solid #198457; outline-offset: 4px; }
+
+    .hero {
+      padding: clamp(28px, 7vw, 76px);
+      border-radius: 24px;
+      background: #122f26;
+      color: white;
+    }
+
+    h1, h2, h3, p { margin: 0; }
+
+    h1 {
+      font-size: clamp(2.4rem, 6vw, 4.8rem);
+      line-height: 1.15;
+      letter-spacing: -.06em;
+    }
+
+    .hero p { margin: 16px 0 24px; color: #c3d8cc; }
+
+    .button {
+      display: inline-block;
+      padding: 10px 18px;
+      border-radius: 8px;
+      background: #d9f89e;
+      color: #183026;
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    section { margin-top: 48px; }
+    h2 { margin-bottom: 16px; font-size: 1.75rem; }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .card {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 24px;
+      border: 1px solid #d8e2dc;
+      border-radius: 16px;
+      background: white;
+    }
+
+    .category {
+      margin-bottom: 12px;
+      padding: 3px 8px;
+      border-radius: 6px;
+      background: #e7f2eb;
+      color: #27634d;
+      font-size: .875rem;
+      font-weight: 700;
+    }
+
+    .card p { margin: 8px 0 20px; color: #485b51; }
+    .card a { margin-top: auto; color: #19543d; font-weight: 700; }
+
+    .goal {
+      padding: 18px 22px;
+      border-left: 4px solid #579572;
+      border-radius: 0 12px 12px 0;
+      background: #e7efe9;
+    }
+
+    footer {
+      margin-block: 40px 24px;
+      padding-top: 16px;
+      border-top: 1px solid #d8e2dc;
+      color: #485b51;
+    }
+
+    @media (max-width: 760px) {
+      .grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <header class="wrap">
+    <strong>나의 공부 기록</strong>
+    <nav aria-label="주 메뉴">
+      <a href="#notes">학습 자료</a>
+      <a href="#goal">학습 목표</a>
+    </nav>
+  </header>
+
+  <main class="wrap">
+    <div class="hero">
+      <h1>나의 공부 기록</h1>
+      <p>웹이 동작하는 원리부터 직접 만든 실습까지, 주제별로 정리했습니다.</p>
+      <a class="button" href="#notes">학습 자료 보기</a>
+    </div>
+
+    <section id="notes" aria-labelledby="notes-title">
+      <h2 id="notes-title">학습 자료</h2>
+      <div class="grid">
+        <article class="card">
+          <span class="category">네트워크</span>
+          <h3>네트워크 통신 프로토콜</h3>
+          <p>TCP와 UDP의 차이, DNS와 TLS의 역할, 브라우저가 웹 페이지를 가져오는 과정을 정리했습니다.</p>
+          <a href="network-protocol-report.html">프로토콜 보고서 읽기</a>
+        </article>
+
+        <article class="card">
+          <span class="category">웹 개발</span>
+          <h3>텍스트 스트리밍</h3>
+          <p>서버가 나누어 보낸 텍스트를 브라우저에서 순차적으로 표시하는 실습입니다.</p>
+          <a href="notion_공유자료/평가_index.html">스트리밍 실습 화면 보기</a>
+        </article>
+
+        <article class="card">
+          <span class="category">프로젝트</span>
+          <h3>전화번호부</h3>
+          <p>연락처를 목록으로 정리하고 찾아볼 수 있도록 만든 웹 화면입니다.</p>
+          <a href="contacts.html">전화번호부 화면 보기</a>
+        </article>
+      </div>
+    </section>
+
+    <section id="goal" aria-labelledby="goal-title">
+      <h2 id="goal-title">학습 목표</h2>
+      <p class="goal">
+        Python HTTP 서버와 HTML·JavaScript의 연동 원리를 이해하고,
+        HTTP 요청과 응답, JSON 처리, 텍스트 스트리밍을 활용해
+        답변을 실시간으로 전송하는 AI 에이전트를 구현합니다.
+      </p>
+    </section>
+
+    <footer>나의 공부 기록</footer>
+  </main>
+</body>
+</html>
